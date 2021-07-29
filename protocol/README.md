@@ -9,7 +9,6 @@ MuriData is a decentralized vector indexing and searching service. With blockcha
 - Distributed Hash Table
 - Distributed Computing
 - Distributed Storage
-- Recursive Distributed Rendezvous
 - Vector Indexing (Annoy Faiss NMSLib)
 - And Some Kawaii Characters (Very important!!!)
 
@@ -79,6 +78,9 @@ Just like the problems faced by distributed computing, the storage also has many
 All nodes joined to the small consensus group will be placed on a hash ring. Through calculation, the segment of vector database would get its location on the hash ring and then the host it will be stored on. One segment would have many replications on the hash ring. When one node quits, the data is also avaliable in other nodes. And to ensure the right number of copy exists, all node must frequently send proofs to the blockchain.
 The vector database will be broken into many pieces called 'fragments', each fragment contains a merkel tree to prove the existence of a vector, and has a unique hash to identify. Also, the fragments would be allocated to all nodes through consistent hashing.
 
+#### Distributed Hash Table
+With the need of forming subgroups, nodes should be able to find and connect with each other. A DHT could be helpful.
+
 #### Progress
 ```mermaid
 sequenceDiagram
@@ -90,12 +92,6 @@ participant Node
 
 Node ->> MuriChain : Stake to prove online.
 Node ->> MuriChain : Node Info.
-loop Proof of online
-MuriChain ->> Node : Online Challange.
-activate Node
-Node ->> MuriChain : Proof.
-deactivate Node
-end
 Baka ->> MuriChain : Register for a Magu.
 MuriChain ->> MuriChain : Orgnize new Magu...
 Baka ->> MuriChain : Add batch vectors..
@@ -132,3 +128,7 @@ MuriChain ->> Node: Reward.
 
 MuriChain ->> Baka: Final Result.
 ```
+
+## Implementation
+There is no implementation now, however we already know how to do it.
+[Protocol Details](Details.md)
