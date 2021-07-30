@@ -38,6 +38,8 @@ Every Magu must have a list of nodes for allocating tokens and tasks.
 A vector segment is identified by its ***Merkel Root***. It is also used to proof the existence of one vector. 
 ***Vector Data Source*** is the source of vector data, such as ipfs or other blockchain, usually being a hash pointer.
 
+[Code Example](examples/vector_segment.py)
+
 ## Searching for vector
 
 When MurIndexers in a Magu receive a query from MuriChain, they will start searching for the nearst results for this vector. They search them in the index, adding to a list of vectors, then give each of them a merkle proof and signature. After finishing this work, they will send the hash of this list to their Magu. When all node send their result hash, they will send their result. Any node who refuse to send the hash in a specified time interval or send the vector list will be punished, and removed from this Magu.
@@ -49,3 +51,4 @@ Their vector list looks like this:
 The node id will be also sent with this list.
 
 When MurIndexer receive all the vector lists of their partners, they will start ranking the vectors in all of the lists. All node will get a ordered list of vectors. Then the first-finished node will propose its result in the Magu, starting a BFT consensus. If this proposal gets most of the signature in this group, it will be sent to MuriChain.
+
