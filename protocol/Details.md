@@ -52,3 +52,10 @@ The node id will be also sent with this list.
 
 When MurIndexer receive all the vector lists of their partners, they will start ranking the vectors in all of the lists. All node will get a ordered list of vectors. Then the first-finished node will propose its result in the Magu, starting a BFT consensus. If this proposal gets most of the signature in this group, it will be sent to MuriChain.
 
+## Node Details
+
+MuriData Node is sperated into two: the blockchain node and index node.
+Blockchain node deals with blockchain and index node is responsible for performing tasks. 
+Index node is connected with blockchain node. They communicate by rpc calls.
+
+

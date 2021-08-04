@@ -1,0 +1,27 @@
+name = "muridata-testground"
+[defaults]
+builder = "docker:go"
+runner = "local:docker"
+
+[builders."docker:go"]
+enabled = true
+go_version = "1.14"
+module_path = "github.com/your/module/name"
+exec_pkg = "."
+
+[builders."exec:go"]
+enabled = true
+module_path = "github.com/your/module/name"
+
+[runners."local:docker"]
+enabled = true
+
+[runners."local:exec"]
+enabled = true
+
+[runners."cluster:k8s"]
+enabled = true
+
+[[testcases]]
+name= "quickstart"
+instances = { min = 1, max = 5, default = 1 }

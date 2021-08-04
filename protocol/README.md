@@ -46,6 +46,12 @@ A node who wants to become a **MurIndexer** and provide indexing ability for the
 #### Searching for vectors
 When a searching task is commited on the blockchain, the **Magu** would receive the task and start the searching process. Every **MurIndexer** would search for the nearst k vectors within its local data and send it to its **Magu**. Then all **MurIndexer**s will reach a consensus on the top k best result among those commitments and finally commit it on the blockchain. The task would finish and receive a result.
 
+#### Fishing at Muri Network
+
+> Fishers are the one who eventually being fished
+
+Now Shrimp could eat the one who fish them. 
+
 ### Detalis
 
 #### Vector Searching
